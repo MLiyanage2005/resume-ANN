@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #000000;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Futuristic grid background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(234, 179, 8, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234, 179, 8, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+  position: relative;
+}
+
+.grid-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle 800px at 50% 200px, rgba(234, 179, 8, 0.08), transparent 80%);
+  pointer-events: none;
+}
+
+/* Ambient glow lighting */
+.ambient-glow {
+  background: radial-gradient(circle 600px at var(--x, 50%) var(--y, 50%), rgba(234, 179, 8, 0.12), transparent 70%);
+}
+
+/* Glassmorphism panel styling */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-accent {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(234, 179, 8, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(234, 179, 8, 0.05);
+}
+
+.glass-panel-accent:hover {
+  border-color: rgba(234, 179, 8, 0.35);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9), 0 0 25px rgba(234, 179, 8, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glowing text */
+.glow-text-yellow {
+  text-shadow: 0 0 20px rgba(234, 179, 8, 0.5);
+}
+
+/* Scanning line effect */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(234, 179, 8, 0.6), transparent);
+  animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(234, 179, 8, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(234, 179, 8, 0.4);
+}
